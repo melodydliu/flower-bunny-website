@@ -114,19 +114,28 @@ export function About() {
               </p>
             </motion.div>
 
-            {/* Philosophy quote */}
+            {/* Philosophy quote — graphic pull-quote */}
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-10 pl-6 border-l border-gold/30"
+              className="mt-12 relative"
             >
-              <p className="font-serif text-xl md:text-2xl text-parchment italic leading-snug">
-                "I want every room to feel like something has grown there —
-                not placed, but summoned."
+              <span
+                className="absolute -top-6 -left-2 font-serif text-[7rem] leading-none text-gold/10 pointer-events-none select-none"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </span>
+              <p className="font-serif text-display-md text-parchment italic leading-[1.2] relative">
+                I want every room to feel like something has grown there —
+                not placed, but summoned.
               </p>
-              <footer className="mt-3 font-sans text-[11px] tracking-[0.2em] uppercase text-gold/60">
-                — Melody Liu
+              <footer className="mt-5 flex items-center gap-4">
+                <span className="h-px w-8 bg-gold/40" />
+                <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-gold/60">
+                  Melody Liu
+                </span>
               </footer>
             </motion.blockquote>
           </div>

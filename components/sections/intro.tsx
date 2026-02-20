@@ -30,9 +30,10 @@ export function Intro() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="font-serif text-display-lg text-parchment leading-tight">
+            <h2 className="font-serif text-display-xl text-parchment leading-[1.0]">
               Flowers as a{" "}
-              <em className="italic text-gold">language</em>{" "}
+              <em className="italic text-gold">language</em>
+              <br />
               of luxury.
             </h2>
           </motion.div>
@@ -63,26 +64,6 @@ export function Intro() {
           </motion.div>
         </div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 1 }}
-          className="grid grid-cols-3 gap-8 mt-24 pt-16 border-t border-gold/10"
-        >
-          {[
-            { number: "200+", label: "Commissions Delivered" },
-            { number: "40+", label: "Luxury Brand Partners" },
-            { number: "8", label: "Years of Practice" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center md:text-left">
-              <div className="font-serif text-4xl md:text-5xl gold-gradient mb-2">{stat.number}</div>
-              <div className="font-sans text-[11px] tracking-[0.2em] uppercase text-parchment-muted">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

@@ -58,9 +58,14 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
-                className="font-sans text-[11px] tracking-[0.25em] uppercase text-parchment-dim hover:text-gold transition-colors duration-300"
+                className={`group relative font-sans text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 ${
+                  link.label === "Enquire"
+                    ? "text-gold hover:text-gold-light"
+                    : "text-parchment-dim hover:text-gold"
+                }`}
               >
                 {link.label}
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold group-hover:w-full transition-all duration-300 ease-out" />
               </button>
             ))}
           </nav>

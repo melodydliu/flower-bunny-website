@@ -101,12 +101,12 @@ function ServiceRow({
       className="grid lg:grid-cols-12 gap-8 lg:gap-16 py-12 lg:py-16 items-start group"
     >
       {/* Index + Title */}
-      <div className="lg:col-span-4 flex items-start gap-6">
+      <div className="lg:col-span-4 flex items-start gap-5">
         <motion.span
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.1 + 0.05 * index }}
-          className="font-sans text-[10px] tracking-[0.2em] text-gold/60 pt-1 shrink-0"
+          className="font-serif font-light text-4xl md:text-5xl text-gold/20 leading-none shrink-0 mt-1 select-none"
         >
           {service.index}
         </motion.span>
@@ -129,7 +129,7 @@ function ServiceRow({
           {service.tags.map((tag) => (
             <span
               key={tag}
-              className="font-sans text-[9px] tracking-[0.2em] uppercase border border-gold/20 text-gold/60 px-3 py-1"
+              className="font-sans text-[9px] tracking-[0.2em] uppercase border border-gold/30 text-gold/70 px-3 py-1 hover:border-gold/60 hover:text-gold transition-colors duration-300"
             >
               {tag}
             </span>

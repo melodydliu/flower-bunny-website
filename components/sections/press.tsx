@@ -54,14 +54,14 @@ export function Press() {
           <p className="font-sans text-[10px] tracking-[0.25em] uppercase text-gold/50 text-center mb-8">
             Press
           </p>
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-5">
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
             {publications.map((pub, i) => (
               <motion.span
                 key={pub}
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.07, duration: 0.6 }}
-                className="font-serif text-xl md:text-2xl text-parchment-dim/50 hover:text-parchment-dim transition-colors duration-300 cursor-default"
+                className="font-serif text-2xl md:text-4xl text-parchment-dim/45 hover:text-parchment-dim/80 transition-colors duration-400 cursor-default"
               >
                 {pub}
               </motion.span>
@@ -87,7 +87,7 @@ export function Press() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 + i * 0.06, duration: 0.6 }}
-                className="font-sans text-[11px] tracking-[0.25em] uppercase text-parchment-muted/50 hover:text-gold/70 transition-colors duration-300 cursor-default"
+                className="font-sans text-[11px] tracking-[0.28em] uppercase text-parchment-muted/55 hover:text-gold/80 transition-colors duration-300 cursor-default"
               >
                 {brand}
               </motion.span>

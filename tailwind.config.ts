@@ -38,6 +38,7 @@ const config: Config = {
         sans: ["var(--font-jost)", "system-ui", "sans-serif"],
       },
       fontSize: {
+        "display-3xl": ["clamp(4rem, 12vw, 16rem)", { lineHeight: "0.88", letterSpacing: "-0.03em" }],
         "display-2xl": ["clamp(3.5rem, 8vw, 7rem)", { lineHeight: "0.95", letterSpacing: "-0.02em" }],
         "display-xl": ["clamp(2.5rem, 6vw, 5rem)", { lineHeight: "1", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
