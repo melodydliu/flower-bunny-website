@@ -6,6 +6,7 @@ import { Carousel } from "@/components/sections/carousel";
 import { Services } from "@/components/sections/services";
 import { Process } from "@/components/sections/process";
 import { Work } from "@/components/sections/work";
+import { Testimonials } from "@/components/sections/testimonials";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
@@ -21,6 +22,7 @@ export default function Home() {
       <Services />
       <Process />
       <Work />
+      <Testimonials />
       <About />
       <Contact />
       <Footer />
