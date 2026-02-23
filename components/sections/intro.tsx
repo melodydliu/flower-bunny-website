@@ -32,9 +32,9 @@ export function Intro() {
           >
             <h2 className="font-serif text-display-xl text-parchment leading-[1.0]">
               Flowers as a{" "}
-              <em className="italic text-gold">language</em>
+              <em className="italic text-gold">visual language</em>
               <br />
-              of luxury.
+              & experience.
             </h2>
           </motion.div>
 
@@ -58,7 +58,7 @@ export function Intro() {
             <div className="pt-4 flex items-center gap-4">
               <div className="h-px w-8 bg-gold/40" />
               <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold/70">
-                Est. London
+                Hawaii, California, Colorado & Worldwide
               </span>
             </div>
           </motion.div>

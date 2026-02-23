@@ -58,7 +58,7 @@ export function Hero() {
           >
             <span className="h-px w-8 bg-gold/50" />
             <span className="font-sans text-[9px] tracking-[0.42em] uppercase text-gold/70">
-              Flower Bunny · London
+              Creative floral studio
             </span>
           </motion.div>
 
