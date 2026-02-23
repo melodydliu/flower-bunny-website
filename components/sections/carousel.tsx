@@ -54,7 +54,7 @@ export function Carousel() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section ref={ref} className="pt-20 pb-32 overflow-hidden bg-surface">
+    <section ref={ref} className="pt-20 pb-0 overflow-hidden bg-surface">
       <div className="section-padding mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
