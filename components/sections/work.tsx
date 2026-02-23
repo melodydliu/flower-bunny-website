@@ -65,12 +65,12 @@ const projects = [
 //   [0 ── wide landscape ──] [1 tall portrait] [2]
 //   [3]         [4]          [1 (cont.)      ] [5]
 const mosaicConfig = [
-  { col: "md:col-span-2", row: "" },
-  { col: "md:col-span-1", row: "md:row-span-2" },
-  { col: "md:col-span-1", row: "" },
-  { col: "md:col-span-1", row: "" },
-  { col: "md:col-span-1", row: "" },
-  { col: "md:col-span-1", row: "" },
+  { col: "md:col-span-2", row: "",              offsetY: -16 },
+  { col: "md:col-span-1", row: "md:row-span-2", offsetY: 12  },
+  { col: "md:col-span-1", row: "",              offsetY: 28  },
+  { col: "md:col-span-1", row: "",              offsetY: -10 },
+  { col: "md:col-span-1", row: "",              offsetY: 20  },
+  { col: "md:col-span-1", row: "",              offsetY: -6  },
 ];
 
 export function Work() {
@@ -87,38 +87,42 @@ export function Work() {
   const isMosaic = activeFilter === "All";
 
   return (
-    <section id="work" ref={ref} className="py-24 md:py-32 section-padding">
+    <section id="work" ref={ref} className="py-24 md:py-32">
       {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
+        className="section-padding flex flex-col gap-8 mb-16"
       >
-        <div>
-          <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold block mb-4">
+        <div className="flex items-start gap-5">
+          <span
+            className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold shrink-0 mt-2"
+            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+          >
             Selected Work
           </span>
-          <h2 className="font-serif text-display-xl text-parchment">
-            The Portfolio
-          </h2>
-        </div>
-
-        {/* Filter pills */}
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveFilter(cat)}
-              className={`font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2 transition-all duration-300 ${
-                activeFilter === cat
-                  ? "bg-gold text-background"
-                  : "border border-gold/20 text-parchment-dim hover:border-gold/50 hover:text-parchment"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+          <div>
+            <h2 className="font-serif text-display-xl text-parchment mb-6">
+              The Portfolio
+            </h2>
+            {/* Filter pills */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveFilter(cat)}
+                  className={`font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2 transition-all duration-300 ${
+                    activeFilter === cat
+                      ? "bg-gold text-background"
+                      : "border border-gold/20 text-parchment-dim hover:border-gold/50 hover:text-parchment"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </motion.div>
 
@@ -132,8 +136,8 @@ export function Work() {
           transition={{ duration: 0.5 }}
           className={
             isMosaic
-              ? "grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3 md:[grid-template-rows:28vw_24vw]"
-              : "grid grid-cols-1 md:grid-cols-3 gap-3 items-start"
+              ? "grid grid-cols-2 gap-2 md:grid-cols-4 md:[grid-template-rows:28vw_24vw]"
+              : "section-padding grid grid-cols-1 md:grid-cols-3 gap-3 items-start"
           }
         >
           {filtered.map((project, i) => (
@@ -181,7 +185,7 @@ function ProjectCard({
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      animate={inView ? { opacity: 1, y: isMosaic ? (mosaicPos?.offsetY ?? 0) : 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={articleClass}
       onMouseEnter={() => setHovered(true)}

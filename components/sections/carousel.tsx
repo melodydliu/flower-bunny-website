@@ -11,26 +11,32 @@ const carouselImages = [
   {
     src: "https://images.unsplash.com/photo-1606041011872-596597976b25?w=800&q=80",
     caption: "Brand Activation · Veuve Clicquot",
+    offsetY: 0,
   },
   {
     src: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=800&q=80",
     caption: "Fashion Show · Simone Rocha",
+    offsetY: 48,
   },
   {
     src: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80",
     caption: "Private Event · Mayfair Commission",
+    offsetY: 16,
   },
   {
     src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     caption: "Window Display · Selfridges London",
+    offsetY: 64,
   },
   {
     src: "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=800&q=80",
     caption: "Installation · Frieze London",
+    offsetY: 8,
   },
   {
     src: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80",
     caption: "Brand Activation · Maison Valentino",
+    offsetY: 36,
   },
 ];
 
@@ -48,7 +54,7 @@ export function Carousel() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section ref={ref} className="py-20 overflow-hidden bg-surface">
+    <section ref={ref} className="pt-20 pb-32 overflow-hidden bg-surface">
       <div className="section-padding mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,6 +96,7 @@ export function Carousel() {
             <div
               key={i}
               className="relative flex-none w-[280px] md:w-[360px] lg:w-[420px]"
+              style={{ marginTop: item.offsetY }}
             >
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image

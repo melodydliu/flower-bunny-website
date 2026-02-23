@@ -85,7 +85,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.78, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-display-2xl text-parchment/75 italic leading-none text-[#c9a96e]"
+              className="text-display-2xl text-parchment/75 italic leading-none text-[#c9a96e] ml-8"
             >
               botanical magic.
             </motion.span>
