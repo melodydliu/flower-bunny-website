@@ -8,7 +8,7 @@ export function Intro() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 md:py-40 section-padding">
+    <section ref={ref} className="pt-32 pb-10 md:pt-40 md:pb-14 section-padding">
       <div className="max-w-5xl mx-auto">
         {/* Ornament */}
         <motion.div

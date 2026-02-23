@@ -1,50 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const brands = [
-  { name: "DIOR",           className: "font-sans tracking-[0.42em] text-[12px]" },
-  { name: "Chanel",         className: "font-serif italic text-[22px] tracking-[0.06em]" },
-  { name: "LOUIS VUITTON",  className: "font-sans tracking-[0.28em] text-[10px]" },
-  { name: "Hermès",         className: "font-serif text-[20px] tracking-[0.08em]" },
-  { name: "TIFFANY & CO.",  className: "font-sans tracking-[0.28em] text-[10px]" },
-  { name: "The Ritz-Carlton", className: "font-serif text-[16px] tracking-[0.1em]" },
-  { name: "CARTIER",        className: "font-sans tracking-[0.42em] text-[12px]" },
-  { name: "Valentino",      className: "font-serif italic text-[22px] tracking-[0.04em]" },
-  { name: "GUCCI",          className: "font-sans tracking-[0.42em] text-[12px]" },
-  { name: "Sotheby's",      className: "font-serif text-[18px] tracking-[0.08em]" },
+  { name: "DIOR",           className: "font-sans tracking-[0.42em] text-[24px]" },
+  { name: "Chanel",         className: "font-serif italic text-[29px] tracking-[0.06em]" },
+  { name: "LOUIS VUITTON",  className: "font-sans tracking-[0.28em] text-[13px]" },
+  { name: "Hermès",         className: "font-serif text-[26px] tracking-[0.08em]" },
+  { name: "TIFFANY & CO.",  className: "font-sans tracking-[0.28em] text-[13px]" },
+  { name: "The Ritz-Carlton", className: "font-serif text-[22px] tracking-[0.1em]" },
+  { name: "CARTIER",        className: "font-sans tracking-[0.42em] text-[16px]" },
+  { name: "Valentino",      className: "font-serif italic text-[29px] tracking-[0.04em]" },
+  { name: "GUCCI",          className: "font-sans tracking-[0.42em] text-[16px]" },
+  { name: "Sotheby's",      className: "font-serif text-[24px] tracking-[0.08em]" },
 ];
 
 export function Marquee() {
-  const repeated = [...brands, ...brands, ...brands];
+  const repeated = [...brands, ...brands];
 
   return (
-    <div className="border-y border-gold/10 bg-surface-raised">
-      {/* Label */}
-      <div className="flex items-center justify-center pt-11 pb-8">
-        <div className="flex items-center gap-6">
-          <span className="h-px w-10 bg-gold/25" />
-          <span className="font-sans text-[9px] tracking-[0.42em] uppercase text-parchment-muted/45">
-            Select Collaborations
-          </span>
-          <span className="h-px w-10 bg-gold/25" />
-        </div>
-      </div>
-
-      {/* Marquee track with edge fade */}
-      <div
-        className="overflow-hidden"
+    <div className="bg-background pt-5 pb-[130px]">
+      {/* Marquee track with edge fade — constrained to 40% and centered */}
+      <div className="max-w-[60%] mx-auto overflow-hidden"
         style={{
           maskImage:
-            "linear-gradient(to right, transparent, black 9%, black 91%, transparent)",
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
           WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 9%, black 91%, transparent)",
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
         }}
       >
-        <motion.div
-          animate={{ x: ["0%", "-33.333%"] }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        <div
           className="flex items-center whitespace-nowrap"
+          style={{ animation: "marquee-scroll 10s linear infinite" }}
         >
           {repeated.map((brand, i) => (
             <span key={i} className="flex items-center">
@@ -54,10 +39,9 @@ export function Marquee() {
               <span className="text-gold/25 text-[6px]">◆</span>
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
 
-      <div className="pb-11" />
     </div>
   );
 }
