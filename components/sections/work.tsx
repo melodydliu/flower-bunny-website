@@ -95,33 +95,28 @@ export function Work() {
         transition={{ duration: 0.8 }}
         className="section-padding flex flex-col gap-8 mb-16"
       >
-        <div className="flex items-start gap-5">
-          <span
-            className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold shrink-0 mt-2"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
+        <div>
+          <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold block mb-4">
             Selected Work
           </span>
-          <div>
-            <h2 className="font-serif text-display-xl text-parchment mb-6">
-              The Portfolio
-            </h2>
-            {/* Filter pills */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveFilter(cat)}
-                  className={`font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2 transition-all duration-300 ${
-                    activeFilter === cat
-                      ? "bg-gold text-background"
-                      : "border border-gold/20 text-parchment-dim hover:border-gold/50 hover:text-parchment"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          <h2 className="font-serif text-display-xl text-parchment mb-6">
+            The Portfolio
+          </h2>
+          {/* Filter pills */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2 transition-all duration-300 ${
+                  activeFilter === cat
+                    ? "bg-gold text-background"
+                    : "border border-gold/20 text-parchment-dim hover:border-gold/50 hover:text-parchment"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
       </motion.div>
